@@ -272,6 +272,7 @@ BigInteger BigInteger::operator*(const BigInteger &obj) const
     }
     char* charsResult = resArray.release();
     std::string strResult = charsResult;
+    delete[] charsResult;
     std::size_t pos = strResult.find_first_not_of('0');
     if(pos != std::string::npos)
     {
